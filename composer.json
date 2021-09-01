@@ -2,10 +2,11 @@
     "name": "mawuekom/laravel-access-control",
     "description": "A package that will help you handling roles and permissions in Laravel",
     "keywords": [
-        "mawuekom",
-        "laravel-access-control"
+        "mawuekom", "accontrol", "roles",
+        "laravel-access-control", "right-management", "permissions", 
+        "laravel-roles", "laravel-permissions", "laravel-access-control"
     ],
-    "homepage": "https://github.com/mawuekom/laravel-access-control",
+    "homepage": "https://github.com/mawuva/laravel-access-control",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -25,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Mawuekom\\LaravelAccessControl\\": "src"
+            "Mawuekom\\Accontrol\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mawuekom\\LaravelAccessControl\\Tests\\": "tests"
+            "Mawuekom\\Accontrol\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +45,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mawuekom\\LaravelAccessControl\\LaravelAccessControlServiceProvider"
+                "Mawuekom\\Accontrol\\AccontrolServiceProvider"
             ],
             "aliases": {
-                "LaravelAccessControl": "Mawuekom\\LaravelAccessControl\\LaravelAccessControlFacade"
+                "Accontrol": "Mawuekom\\Accontrol\\AccontrolFacade"
             }
         }
     }

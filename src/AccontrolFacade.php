@@ -1,13 +1,13 @@
 <?php
 
-namespace Mawuekom\LaravelAccessControl;
+namespace Mawuekom\Accontrol;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Mawuekom\LaravelAccessControl\Skeleton\SkeletonClass
+ * @see \Mawuekom\Accontrol\Skeleton\SkeletonClass
  */
-class LaravelAccessControlFacade extends Facade
+class AccontrolFacade extends Facade
 {
     /**
      * Get the registered name of the component.

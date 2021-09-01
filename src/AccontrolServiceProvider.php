@@ -1,10 +1,10 @@
 <?php
 
-namespace Mawuekom\LaravelAccessControl;
+namespace Mawuekom\Accontrol;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelAccessControlServiceProvider extends ServiceProvider
+class AccontrolServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -14,29 +14,29 @@ class LaravelAccessControlServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-access-control');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-access-control');
+        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'accontrol');
+        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'accontrol');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('laravel-access-control.php'),
+                __DIR__.'/../config/accontrol.php' => config_path('accontrol.php'),
             ], 'config');
 
             // Publishing the views.
             /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-access-control'),
+                __DIR__.'/../resources/views' => resource_path('views/vendor/accontrol'),
             ], 'views');*/
 
             // Publishing assets.
             /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/laravel-access-control'),
+                __DIR__.'/../resources/assets' => public_path('vendor/accontrol'),
             ], 'assets');*/
 
             // Publishing the translation files.
             /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/laravel-access-control'),
+                __DIR__.'/../resources/lang' => resource_path('lang/vendor/accontrol'),
             ], 'lang');*/
 
             // Registering package commands.
@@ -50,11 +50,11 @@ class LaravelAccessControlServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'laravel-access-control');
+        $this->mergeConfigFrom(__DIR__.'/../config/accontrol.php', 'accontrol');
 
         // Register the main class to use with the facade
-        $this->app->singleton('laravel-access-control', function () {
-            return new LaravelAccessControl;
+        $this->app->singleton('accontrol', function () {
+            return new Accontrol;
         });
     }
 }
