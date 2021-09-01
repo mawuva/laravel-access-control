@@ -16,6 +16,6 @@ class AccontrolFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'laravel-access-control';
+        return 'accontrol';
     }
 }

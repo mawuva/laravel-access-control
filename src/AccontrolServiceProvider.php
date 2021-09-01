@@ -14,9 +14,9 @@ class AccontrolServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'accontrol');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'accontrol');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'accontrol');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
