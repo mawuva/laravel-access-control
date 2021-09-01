@@ -1,10 +1,6 @@
-# Very short description of the package
+# Laravel Access Control - A package for handling roles and permissions.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/mawuekom/laravel-access-control.svg?style=flat-square)](https://packagist.org/packages/mawuekom/laravel-access-control)
-[![Total Downloads](https://img.shields.io/packagist/dt/mawuekom/laravel-access-control.svg?style=flat-square)](https://packagist.org/packages/mawuekom/laravel-access-control)
-![GitHub Actions](https://github.com/mawuekom/laravel-access-control/actions/workflows/main.yml/badge.svg)
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package provides you with a set of features that will allow you to easily manage roles and permissions in your Laravel projects.
 
 ## Installation
 
@@ -17,7 +13,7 @@ composer require mawuekom/laravel-access-control
 ## Usage
 
 ```php
-// Usage description here
+// Coming soon
 ```
 
 ### Testing
@@ -34,19 +30,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-### Security
-
-If you discover any security related issues, please email seddorephraim7@gmail.com instead of using the issue tracker.
-
-## Credits
-
--   [Ephraïm Seddor](https://github.com/mawuekom)
--   [All Contributors](../../contributors)
-
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
