@@ -102,3 +102,63 @@ if (!function_exists('resource_is_enabled_and_exists_in_schema')) {
                 : false;
     }
 }
+
+if ( ! function_exists('check_key_in_array')) {
+    /**
+     * Chef if a key exists in array
+     *
+     * @param array $array
+     * @param string $key
+     * 
+     * @return string
+     */
+    function check_key_in_array(array $array = [], string $key = '') {
+        if (is_array($array) && !empty($key)) {
+            if (key_exists($key, $array)) {
+                if ($array[$key] != null) {
+                    return $array[$key];
+                }
+            }
+        }
+    }
+}
+
+if ( ! function_exists('success_response')) {
+    /**
+     * Generate username from random string
+     *
+     * @param string $message
+     * @param array|null|Object $data
+     * @param int $code
+     * 
+     * @return array
+     */
+    function success_response(string $message = 'Action performed successfully', $data = null, int $code = 200): array {
+        return [
+            'code'      => $code,
+            'status'    => 'success',
+            'message'   => $message,
+            'data'      => $data,
+        ];
+    }
+}
+
+if ( ! function_exists('failure_response')) {
+    /**
+     * Generate username from random string
+     *
+     * @param string $message
+     * @param array|null|Object $data
+     * @param int $code
+     * 
+     * @return array
+     */
+    function failure_response(string $message = 'Action attempted failed', $data = null, int $code = 0): array {
+        return [
+            'code'      => $code,
+            'status'    => 'failed',
+            'message'   => $message,
+            'data'      => $data,
+        ];
+    }
+}

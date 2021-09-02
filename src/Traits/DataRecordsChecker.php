@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Accontrol\Traits;
+namespace Accontrol\Traits;
 
 use Exception;
 use Illuminate\Http\Response;
