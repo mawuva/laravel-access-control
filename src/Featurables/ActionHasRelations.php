@@ -1,6 +1,6 @@
 <?php
 
-namespace Accontrol\Featurables;
+namespace Mawuekom\Accontrol\Featurables;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;

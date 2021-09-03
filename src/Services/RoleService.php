@@ -1,10 +1,10 @@
 <?php
 
-namespace Accontrol\Services;
+namespace Mawuekom\Accontrol\Services;
 
-use Accontrol\Contracts\Persistables\RoleManager as RoleManagerContract;
-use Accontrol\Persistables\RoleManager;
-use Accontrol\Repositories\RoleRepository;
+use Mawuekom\Accontrol\Contracts\Persistables\RoleManager as RoleManagerContract;
+use Mawuekom\Accontrol\Persistables\RoleManager;
+use Mawuekom\Accontrol\Repositories\RoleRepository;
 
 class RoleService implements RoleManagerContract
 {
@@ -13,14 +13,14 @@ class RoleService implements RoleManagerContract
     protected $resource;
 
     /**
-     * @var \Accontrol\Repositories\RoleRepository
+     * @var \Mawuekom\Accontrol\Repositories\RoleRepository
      */
     protected $repository;
 
     /**
      * Create new service instance.
      *
-     * @param \Accontrol\Repositories\RoleRepository $roleRepository
+     * @param \Mawuekom\Accontrol\Repositories\RoleRepository $roleRepository
      * 
      * @return void
      */

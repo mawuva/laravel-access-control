@@ -1,8 +1,8 @@
 <?php
 
-namespace Accontrol\Http\Requests;
+namespace Mawuekom\Accontrol\Http\Requests;
 
-use Accontrol\Persistables\EntityManager;
+use Mawuekom\Accontrol\Persistables\EntityManager;
 use Mawuekom\RequestCustomizer\FormRequestCustomizer;
 use Mawuekom\RequestSanitizer\Sanitizers\Capitalize;
 

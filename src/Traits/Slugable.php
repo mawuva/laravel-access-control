@@ -1,6 +1,6 @@
 <?php
 
-namespace Accontrol\Traits;
+namespace Mawuekom\Accontrol\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;

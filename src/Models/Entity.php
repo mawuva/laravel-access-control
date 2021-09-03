@@ -1,10 +1,10 @@
 <?php
 
-namespace Accontrol\Models;
+namespace Mawuekom\Accontrol\Models;
 
-use Accontrol\Contracts\Featurables\EntityHasRelations as EntityHasRelationsContract;
-use Accontrol\Featurables\EntityHasRelations;
-use Accontrol\Traits\Slugable;
+use Mawuekom\Accontrol\Contracts\Featurables\EntityHasRelations as EntityHasRelationsContract;
+use Mawuekom\Accontrol\Featurables\EntityHasRelations;
+use Mawuekom\Accontrol\Traits\Slugable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

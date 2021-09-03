@@ -1,8 +1,8 @@
 <?php
 
-namespace Accontrol\Http\Requests;
+namespace Mawuekom\Accontrol\Http\Requests;
 
-use Accontrol\Persistables\ActionManager;
+use Mawuekom\Accontrol\Persistables\ActionManager;
 use Mawuekom\RequestCustomizer\FormRequestCustomizer;
 
 class SearchActionRequest extends FormRequestCustomizer

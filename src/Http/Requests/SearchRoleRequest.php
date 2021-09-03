@@ -1,8 +1,8 @@
 <?php
 
-namespace Accontrol\Http\Requests;
+namespace Mawuekom\Accontrol\Http\Requests;
 
-use Accontrol\Persistables\RoleManager;
+use Mawuekom\Accontrol\Persistables\RoleManager;
 use Mawuekom\RequestCustomizer\FormRequestCustomizer;
 
 class SearchRoleRequest extends FormRequestCustomizer

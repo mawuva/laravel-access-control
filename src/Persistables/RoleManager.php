@@ -1,9 +1,9 @@
 <?php
 
-namespace Accontrol\Persistables;
+namespace Mawuekom\Accontrol\Persistables;
 
-use Accontrol\Traits\DataRecordsChecker;
-use Accontrol\Traits\ResourceDataManager;
+use Mawuekom\Accontrol\Traits\DataRecordsChecker;
+use Mawuekom\Accontrol\Traits\ResourceDataManager;
 use Illuminate\Database\RecordsNotFoundException;
 use Illuminate\Http\Response;
 use Mawuekom\RepositoryLayer\BaseApiRepository;

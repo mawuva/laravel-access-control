@@ -1,6 +1,6 @@
 <?php
 
-namespace Accontrol\Contracts\Featurables;
+namespace Mawuekom\Accontrol\Contracts\Featurables;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Accontrol\Http\Requests;
+namespace Mawuekom\Accontrol\Http\Requests;
 
-use Accontrol\Persistables\PermissionManager;
+use Mawuekom\Accontrol\Persistables\PermissionManager;
 use Mawuekom\RequestCustomizer\FormRequestCustomizer;
 
 class SearchPermissionRequest extends FormRequestCustomizer

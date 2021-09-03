@@ -1,10 +1,10 @@
 <?php
 
-namespace Accontrol\Services;
+namespace Mawuekom\Accontrol\Services;
 
-use Accontrol\Contracts\Persistables\PermissionManager as PermissionManagerContract;
-use Accontrol\Persistables\PermissionManager;
-use Accontrol\Repositories\PermissionRepository;
+use Mawuekom\Accontrol\Contracts\Persistables\PermissionManager as PermissionManagerContract;
+use Mawuekom\Accontrol\Persistables\PermissionManager;
+use Mawuekom\Accontrol\Repositories\PermissionRepository;
 
 class PermissionService implements PermissionManagerContract
 {
@@ -13,14 +13,14 @@ class PermissionService implements PermissionManagerContract
     protected $resource;
 
     /**
-     * @var \Accontrol\Repositories\PermissionRepository
+     * @var \Mawuekom\Accontrol\Repositories\PermissionRepository
      */
     protected $repository;
 
     /**
      * Create new service instance.
      *
-     * @param \Accontrol\Repositories\PermissionRepository $permissionRepository
+     * @param \Mawuekom\Accontrol\Repositories\PermissionRepository $permissionRepository
      * 
      * @return void
      */

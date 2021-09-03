@@ -1,10 +1,10 @@
 <?php
 
-namespace Accontrol\Services;
+namespace Mawuekom\Accontrol\Services;
 
-use Accontrol\Contracts\Persistables\ActionManager as ActionManagerContract;
-use Accontrol\Persistables\ActionManager;
-use Accontrol\Repositories\ActionRepository;
+use Mawuekom\Accontrol\Contracts\Persistables\ActionManager as ActionManagerContract;
+use Mawuekom\Accontrol\Persistables\ActionManager;
+use Mawuekom\Accontrol\Repositories\ActionRepository;
 
 class ActionService implements ActionManagerContract
 {
@@ -13,14 +13,14 @@ class ActionService implements ActionManagerContract
     protected $resource;
 
     /**
-     * @var \Accontrol\Repositories\ActionRepository
+     * @var \Mawuekom\Accontrol\Repositories\ActionRepository
      */
     protected $repository;
 
     /**
      * Create new service instance.
      *
-     * @param \Accontrol\Repositories\ActionRepository $actionRepository
+     * @param \Mawuekom\Accontrol\Repositories\ActionRepository $actionRepository
      * 
      * @return void
      */

@@ -1,6 +1,6 @@
 <?php
 
-namespace Accontrol\Contracts\Persistables;
+namespace Mawuekom\Accontrol\Contracts\Persistables;
 
 interface RoleManager
 {

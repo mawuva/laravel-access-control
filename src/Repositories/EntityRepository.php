@@ -1,6 +1,6 @@
 <?php
 
-namespace Accontrol\Repositories;
+namespace Mawuekom\Accontrol\Repositories;
 
 use Mawuekom\RepositoryLayer\BaseApiRepository;
 

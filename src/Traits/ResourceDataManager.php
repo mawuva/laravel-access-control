@@ -1,6 +1,6 @@
 <?php
 
-namespace Accontrol\Traits;
+namespace Mawuekom\Accontrol\Traits;
 
 use Exception;
 use Illuminate\Http\Response;
