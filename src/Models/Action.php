@@ -2,15 +2,17 @@
 
 namespace Accontrol\Models;
 
+use Accontrol\Contracts\Featurables\ActionHasRelations as ActionHasRelationsContract;
+use Accontrol\Featurables\ActionHasRelations;
 use Accontrol\Traits\Slugable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Mawuekom\ModelUuid\Utils\GeneratesUuid;
 
-class Action extends Model
+class Action extends Model implements ActionHasRelationsContract
 {
-    use HasFactory, SoftDeletes, GeneratesUuid, Slugable;
+    use HasFactory, SoftDeletes, GeneratesUuid, Slugable, ActionHasRelations;
     
     /**
      * Create a new model instance.

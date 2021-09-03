@@ -2,15 +2,17 @@
 
 namespace Accontrol\Models;
 
+use Accontrol\Featurables\PermissionHasRelations;
+use Accontrol\Contracts\Featurables\PermissionHasRelations as PermissionHasRelationsContracts;
 use Accontrol\Traits\Slugable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Mawuekom\ModelUuid\Utils\GeneratesUuid;
 
-class Permission extends Model
+class Permission extends Model implements PermissionHasRelationsContracts
 {
-    use HasFactory, SoftDeletes, GeneratesUuid, Slugable;
+    use HasFactory, SoftDeletes, GeneratesUuid, Slugable, PermissionHasRelations;
 
     /**
      * Create a new model instance.
