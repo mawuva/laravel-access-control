@@ -24,7 +24,7 @@ return [
         'enable'                    => env('ACCONTROL_ACTIONS_ENABLE', true),
         'name'                      => env('ACCONTROL_ACTIONS_LABEL', 'Action'),
         'resource_name'             => env('ACCONTROL_ACTIONS_RESOURCE_NAME', 'action'),
-        'model'                     => env('ACCONTROL_ACTIONS_MODEL', Accontrol\Models\Action::class),
+        'model'                     => env('ACCONTROL_ACTIONS_MODEL', Mawuekom\Accontrol\Models\Action::class),
 
         'table'                     => [
             'name'                  => env('ACCONTROL_ACTIONS_DATABASE_TABLE', 'actions'),
@@ -36,7 +36,7 @@ return [
         'enable'                    => env('ACCONTROL_ENTITIES_ENABLE', true),
         'name'                      => env('ACCONTROL_ENTITIES_LABEL', 'Entity'),
         'resource_name'             => env('ACCONTROL_ENTITIES_RESOURCE_NAME', 'entity'),
-        'model'                     => env('ACCONTROL_ENTITIES_MODEL', Accontrol\Models\Entity::class),
+        'model'                     => env('ACCONTROL_ENTITIES_MODEL', Mawuekom\Accontrol\Models\Entity::class),
 
         'table'                     => [
             'name'                  => env('ACCONTROL_ENTITIES_DATABASE_TABLE', 'entities'),
@@ -48,7 +48,7 @@ return [
         'enable'                    => env('ACCONTROL_ROLES_ENABLE', true),
         'name'                      => env('ACCONTROL_ROLES_LABEL', 'Role'),
         'resource_name'             => env('ACCONTROL_ROLES_RESOURCE_NAME', 'role'),
-        'model'                     => env('ACCONTROL_ROLES_MODEL', Accontrol\Models\Role::class),
+        'model'                     => env('ACCONTROL_ROLES_MODEL', Mawuekom\Accontrol\Models\Role::class),
 
         'table'                     => [
             'name'                  => env('ACCONTROL_ROLES_DATABASE_TABLE', 'roles'),
@@ -74,7 +74,7 @@ return [
         'enable'                    => true,
         'name'                      => env('ACCONTROL_PERMISSIONS_LABEL', 'Permission'),
         'resource_name'             => env('ACCONTROL_PERMISSIONS_RESOURCE_NAME', 'permission'),
-        'model'                     => env('ACCONTROL_PERMISSIONS_MODEL', Accontrol\Models\Permission::class),
+        'model'                     => env('ACCONTROL_PERMISSIONS_MODEL', Mawuekom\Accontrol\Models\Permission::class),
 
         'table'                     => [
             'name'                  => env('ACCONTROL_PERMISSIONS_DATABASE_TABLE', 'permissions'),
