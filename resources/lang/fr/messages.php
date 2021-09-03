@@ -1,23 +1,27 @@
 <?php
 
 return [
-    'records'               => [
-        'not_available'     => 'Aucun enregistrement disponible pour le moment.',
-        'not_found'         => 'Aucun enregistrement trouvé pour cette demande.',
-        'not_found_trashed' => 'Aucun enregistrement disponible dans la corbeille.',
+    'records'                           => [
+        'not_available'                 => 'Aucun enregistrement disponible pour le moment.',
+        'not_found'                     => 'Aucun enregistrement trouvé pour cette demande.',
+        'not_found_trashed'             => 'Aucun enregistrement disponible dans la corbeille.',
     ],
 
-    'resource'              => [
-        'not_found'         => 'La ressource demandée n\'a pas été trouvée.',
-        'already_exists'    => 'La ressource que vous essayez de créer existe déjà.',
+    'resource'                          => [
+        'not_found'                     => 'La ressource demandée n\'a pas été trouvée.',
+        'already_exists'                => 'La ressource que vous essayez de créer existe déjà.',
     ],
 
-    'available_for_all_entities'    => 'Disponible pour toutes les entités',
-    'no_results_found'              => 'Aucun résultat trouvé.',
-    'attribute_already_exists'      => 'Cet :attribute existe déjà.',
-    'old_password_not_matching'     => 'L\'ancien mot de passe fourni ne correspond pas à nos enregistrements.',
-    'password_not_matching'         => 'Le mot de passe fourni ne correspond pas à nos enregistrements.',
-    'can_not_delete_yoursel'        => 'Vous ne pouvez pas vous supprimer.',
+    'available_for_all_entities'        => 'Disponible pour toutes les entités',
+    'no_results_found'                  => 'Aucun résultat trouvé.',
+    'attribute_already_exists'          => 'Cet :attribute existe déjà.',
+    'old_password_not_matching'         => 'L\'ancien mot de passe fourni ne correspond pas à nos enregistrements.',
+    'password_not_matching'             => 'Le mot de passe fourni ne correspond pas à nos enregistrements.',
+    'can_not_delete_yoursel'            => 'Vous ne pouvez pas vous supprimer.',
+
+    'do_not_have_required_level'        => "Vous n'avez pas le niveau [%s] qui est requis.",
+    'do_not_have_required_permission'   => "Vous n'avez la permission ['%s'] qui est requise.",
+    'do_not_have_required_role'         => "Vous n'avez pas le role ['%s'] qui est requis.",
 
     'entity'                        => [
         'created'               => ':Entity créé(e) avec succès.',

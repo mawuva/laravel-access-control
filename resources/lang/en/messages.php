@@ -2,22 +2,26 @@
 
 return [
     'records'           => [
-        'not_available'         => 'No records available yet.',
-        'not_found'             => 'No records found for this request.',
-        'not_found_trashed'     => 'No trashed records available.',
+        'not_available'                 => 'No records available yet.',
+        'not_found'                     => 'No records found for this request.',
+        'not_found_trashed'             => 'No trashed records available.',
     ],
 
-    'resource'          => [
-        'not_found'             => 'The requested resource was not found.',
-        'already_exists'        => 'The resource you are trying to create already exists.',
+    'resource'                          => [
+        'not_found'                     => 'The requested resource was not found.',
+        'already_exists'                => 'The resource you are trying to create already exists.',
     ],
 
-    'available_for_all_entities' => 'Available for all entities',
-    'no_results_found'          => 'No results found.',
-    'attribute_already_exists'  => 'This :attribute already exists.',
-    'old_password_not_matching' => 'The provided old password does not match our records.',
-    'password_not_matching'     => 'The provided password does not match our records.',
-    'can_not_delete_yoursel'    => 'You can not delete yourself.',
+    'available_for_all_entities'        => 'Available for all entities',
+    'no_results_found'                  => 'No results found.',
+    'attribute_already_exists'          => 'This :attribute already exists.',
+    'old_password_not_matching'         => 'The provided old password does not match our records.',
+    'password_not_matching'             => 'The provided password does not match our records.',
+    'can_not_delete_yoursel'            => 'You can not delete yourself.',
+
+    'do_not_have_required_level'        => "You don't have a required [%s] level.",
+    'do_not_have_required_permission'   => "You don't have a required ['%s'] permission.",
+    'do_not_have_required_role'         => "You don't have a required ['%s'] role.",
 
     'entity'            => [
         'created'               => ':Entity created successfully.',
