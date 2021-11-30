@@ -53,7 +53,7 @@
                 "Mawuekom\\Accontrol\\AccontrolServiceProvider"
             ],
             "aliases": {
-                "Accontrol": "Mawuekom\\Accontrol\\AccontrolFacade"
+                "Accontrol": "Mawuekom\\Accontrol\\Facades\\Accontrol"
             }
         }
     }

@@ -1,13 +1,13 @@
 <?php
 
-namespace Mawuekom\Accontrol;
+namespace Mawuekom\Accontrol\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \Mawuekom\Accontrol\Skeleton\SkeletonClass
  */
-class AccontrolFacade extends Facade
+class Accontrol extends Facade
 {
     /**
      * Get the registered name of the component.
