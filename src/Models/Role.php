@@ -4,7 +4,7 @@ namespace Mawuekom\Accontrol\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Mawuekom\Accontrol\Traits\Slugable;
+use Mawuekom\CustomHelpers\Traits\Slugable;
 use Mawuekom\ModelUuid\Utils\GeneratesUuid;
 
 class Role extends Model
