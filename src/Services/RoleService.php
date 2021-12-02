@@ -72,7 +72,9 @@ class RoleService
      */
     public function getById($id, $inTrashed = false, $columns = ['*'])
     {
-        $role = Accontrol::getEntityById($this ->slug, $id, $inTrashed, $columns);
+        $role = data_helpers($this ->roleRepository ->getModel(), [], $inTrashed)
+                    ->fromId($id)
+                    ->getDataRow($columns);
 
         if (is_null($role)) {
             return failure_response(null, trans('lang-resources::commons.messages.resource.not_found'), Response::HTTP_NO_CONTENT);
@@ -97,7 +99,8 @@ class RoleService
      */
     public function getByField($field, $value = null, $inTrashed = false, $columns = ['*'])
     {
-        $role = Accontrol::getEntityByField($this ->slug, $field, $value, $inTrashed, $columns);
+        $role = data_helpers($this ->roleRepository ->getModel(), [$field, $value], $inTrashed)
+                    ->getDataRow($columns);
 
         if (is_null($role)) {
             return failure_response(null, trans('lang-resources::commons.messages.resource.not_found'), Response::HTTP_NO_CONTENT);
@@ -136,7 +139,9 @@ class RoleService
      */
     public function updateFieldValueById($id, string $field, string $value = null)
     {
-        $role = Accontrol::getEntityById($this ->slug, $id, false, [$field]);
+        $role = data_helpers($this ->roleRepository ->getModel())
+                    ->fromId($id)
+                    ->getDataRow([$field]);
 
         $role ->{$field} = $value;
         $role ->save();
@@ -153,12 +158,12 @@ class RoleService
      */
     public function delete($id)
     {
-        $role = Accontrol::getEntityById($this ->slug, $id, false, ['id']);
-        $role ->delete();
+        $role = data_helpers($this ->roleRepository ->getModel())
+                    ->fromId($id)
+                    ->getDataRow(['id'])
+                    ->delete();
 
-        return success_response($role, trans('lang-resources::commons.messages.entity.deleted', [
-            'Entity' => trans_choice('accontrol::entity.role', 1)
-        ]));
+        return success_response($role, trans('lang-resources::commons.messages.completed.deletion'));
     }
 
     /**
@@ -170,12 +175,12 @@ class RoleService
      */
     public function restore($id)
     {
-        $role = Accontrol::getEntityById($this ->slug, $id, true, ['id']);
-        $role ->restore();
+        $role = data_helpers($this ->roleRepository ->getModel(), [], true)
+                    ->fromId($id)
+                    ->getDataRow(['id'])
+                    ->restore();
 
-        return success_response($role, trans('lang-resources::commons.messages.entity.restored', [
-            'Entity' => trans_choice('accontrol::entity.role', 1)
-        ]));
+        return success_response($role, trans('lang-resources::commons.messages.completed.restoration'));
     }
 
     /**
@@ -187,11 +192,11 @@ class RoleService
      */
     public function destroy($id)
     {
-        $role = Accontrol::getEntityById($this ->slug, $id, true, ['id']);
-        $role ->forceDelete();
+        data_helpers($this ->roleRepository ->getModel(), [], true)
+            ->fromId($id)
+            ->getDataRow(['id'])
+            ->forceDelete();
 
-        return success_response(null, trans('lang-resources::commons.messages.entity.deleted_permanently', [
-            'Entity' => trans_choice('accontrol::entity.role', 1)
-        ]));
+        return success_response(null, trans('lang-resources::commons.messages.completed.permanent_deletion'));
     }
 }

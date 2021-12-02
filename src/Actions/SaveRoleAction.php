@@ -18,9 +18,7 @@ class SaveRoleAction
      */
     public function execute(RoleDTO $roleDTO, $id = null): Model
     {
-        $role = ($id !== null)
-                        ? Accontrol::getEntityById(config('accontrol.role.slug'), $id)
-                        : app(config('accontrol.role.model'));
+        $role = data_helpers(config('accontrol.role.model')) ->getModelInstance($id);
         
         $role ->name         = $roleDTO ->name;
         $role ->slug         = ($roleDTO ->slug !== null) ? $roleDTO ->slug : $roleDTO ->name;
