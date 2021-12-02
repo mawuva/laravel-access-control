@@ -69,8 +69,8 @@ return [
     */
 
     'uuids' => [
-        'enable' => env('ACCONTROL_UUID_ENABLE', true),
-        'column' => env('ACCONTROL_UUID_COLUMN', '_id'),
+        'enabled'   => env('ACCONTROL_UUID_ENABLED', true),
+        'column'    => env('ACCONTROL_UUID_COLUMN', '_id'),
     ],
 ];
 

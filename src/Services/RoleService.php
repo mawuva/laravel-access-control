@@ -5,7 +5,6 @@ namespace Mawuekom\Accontrol\Services;
 use Illuminate\Http\Response;
 use Mawuekom\Accontrol\Actions\SaveRoleAction;
 use Mawuekom\Accontrol\DataTransferObjects\RoleDTO;
-use Mawuekom\Accontrol\Facades\Accontrol;
 use Mawuekom\Accontrol\Repositories\RoleRepository;
 
 class RoleService

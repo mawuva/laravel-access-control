@@ -23,7 +23,7 @@ class SaveRoleAction
         $role ->name         = $roleDTO ->name;
         $role ->slug         = ($roleDTO ->slug !== null) ? $roleDTO ->slug : $roleDTO ->name;
         $role ->description  = $roleDTO ->description;
-        $role ->level        = $roleDTO ->level;
+        $role ->level        = ($roleDTO ->level !== null) ? $roleDTO ->level : 1;
 
         $role ->save();
 
