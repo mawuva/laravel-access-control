@@ -20,7 +20,7 @@ return [
     'role'          => [
         'enabled'           => env('ACCONTROL_ROLES_ENABLE', true),
         'name'              => env('ACCONTROL_ROLES_LABEL', 'Role'),
-        'slug'                => env('ACCONTROL_ROLES_SLUG', 'role'),
+        'slug'              => env('ACCONTROL_ROLES_SLUG', 'role'),
         'model'             => env('ACCONTROL_ROLES_MODEL', Mawuekom\Accontrol\Models\Role::class),
 
         /*
@@ -45,6 +45,54 @@ return [
             'primary_key'           => env('ACCONTROL_ROLE_USER_DATABASE_TABLE_PRIMARY_KEY', 'id'),
             'role_foreign_key'      => env('ACCONTROL_ROLE_USER_DATABASE_TABLE_ROLE_FOREIGN_KEY', 'role_id'),
             'user_foreign_key'      => env('ACCONTROL_ROLE_USER_DATABASE_TABLE_USER_FOREIGN_KEY', 'user_id'),
+        ],
+    ],
+
+    /*
+    | Manage permission config
+    */
+    'permission' => [
+        'enabled'           => true,
+        'name'              => env('ACCONTROL_PERMISSIONS_LABEL', 'Permission'),
+        'slug'              => env('ACCONTROL_PERMISSIONS_SLUG', 'permission'),
+        'model'             => env('ACCONTROL_PERMISSIONS_MODEL', Mawuekom\Accontrol\Models\Permission::class),
+
+        /*
+        | The name of the parameter you set in your web.php or api.php to get permission's ID
+        */
+        'id_route_param'    => 'id',
+
+        'table'             => [
+            'name'          => env('ACCONTROL_PERMISSIONS_DATABASE_TABLE', 'permissions'),
+            'primary_key'   => env('ACCONTROL_PERMISSIONS_DATABASE_TABLE_PRIMARY_KEY', 'id'),
+        ],
+    ],
+
+    'permission_role' => [
+        'enabled'                       => true,
+        'name'                          => env('ACCONTROL_PERMISSION_ROLE_LABEL', 'Permission Role'),
+        'slug'                          => env('ACCONTROL_PERMISSION_ROLE_SLUG', 'permission_role'),
+        'model'                         => env('ACCONTROL_PERMISSION_ROLE_MODEL', null),
+
+        'table'                         => [
+            'name'                      => env('ACCONTROL_PERMISSION_ROLE_DATABASE_TABLE', 'permission_role'),
+            'primary_key'               => env('ACCONTROL_PERMISSION_ROLE_DATABASE_TABLE_PRIMARY_KEY', 'id'),
+            'permission_foreign_key'    => env('ACCONTROL_PERMISSION_ROLE_DATABASE_TABLE_PERMISSION_FOREIGN_KEY', 'permission_id'),
+            'role_foreign_key'          => env('ACCONTROL_PERMISSION_ROLE_DATABASE_TABLE_ROLE_FOREIGN_KEY', 'role_id'),
+        ],
+    ],
+
+    'permission_user' => [
+        'enabled'                       => true,
+        'name'                          => env('ACCONTROL_PERMISSION_USER_LABEL', 'Permission User'),
+        'slug'                          => env('ACCONTROL_PERMISSION_USER_SLUG', 'permission_user'),
+        'model'                         => env('ACCONTROL_PERMISSION_USER_MODEL', null),
+
+        'table'                         => [
+            'name'                      => env('ACCONTROL_PERMISSION_USER_DATABASE_TABLE', 'permission_user'),
+            'primary_key'               => env('ACCONTROL_PERMISSION_USER_DATABASE_TABLE_PRIMARY_KEY', 'id'),
+            'permission_foreign_key'    => env('ACCONTROL_PERMISSION_ROLE_DATABASE_TABLE_PERMISSION_FOREIGN_KEY', 'permission_id'),
+            'user_foreign_key'          => env('ACCONTROL_PERMISSION_ROLE_DATABASE_TABLE_USER_FOREIGN_KEY', 'user_id'),
         ],
     ],
 
