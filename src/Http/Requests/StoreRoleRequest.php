@@ -18,7 +18,7 @@ class StoreRoleRequest extends FormRequestCustomizer
     /**
      * Create new form request instance.
      *
-     * @param \Mawuekom\Usercare\Services\roleService $useroleServicerService
+     * @param \Mawuekom\Accontrol\Services\RoleService $roleService
      */
     public function __construct(RoleService $roleService)
     {

@@ -3,27 +3,27 @@
 namespace Mawuekom\Accontrol\Http\Requests;
 
 use Illuminate\Validation\Rule;
-use Mawuekom\Accontrol\DataTransferObjects\RoleDTO;
-use Mawuekom\Accontrol\Services\RoleService;
+use Mawuekom\Accontrol\DataTransferObjects\PermissionDTO;
+use Mawuekom\Accontrol\Services\PermissionService;
 use Mawuekom\RequestCustomizer\FormRequestCustomizer;
 use Mawuekom\RequestSanitizer\Sanitizers\Capitalize;
 
-class UpdateRoleRequest extends FormRequestCustomizer
+class StorePermissionRequest extends FormRequestCustomizer
 {
     /**
-     * @var \Mawuekom\Accontrol\Services\RoleService
+     * @var \Mawuekom\Accontrol\Services\PermissionService
      */
-    protected $roleService;
+    protected $permissionService;
 
     /**
      * Create new form request instance.
      *
-     * @param \Mawuekom\Accontrol\Services\roleService $roleService
+     * @param \Mawuekom\Accontrol\Services\PermissionService $permissionService
      */
-    public function __construct(RoleService $roleService)
+    public function __construct(PermissionService $permissionService)
     {
         parent::__construct();
-        $this ->roleService = $roleService;
+        $this ->permissionService = $permissionService;
     }
 
     /**
@@ -43,18 +43,15 @@ class UpdateRoleRequest extends FormRequestCustomizer
      */
     public function rules(): array
     {
-        $rolesTable = config('accontrol.role.table.name');
-        $roleIDRouteParam = $this ->route(config('accontrol.role.id_route_param'));
-        $key = resolve_key(config('accontrol.role.model'), $roleIDRouteParam);
+        $permissionsTable = config('accontrol.permission.table.name');
 
         return [
             'name'          => 'required|string|max:255',
             'slug'          => [
-                'nullable', 'string', 'max:255',
-                Rule::unique($rolesTable, 'slug') ->ignore($roleIDRouteParam, $key)
+                'required', 'string', 'max:255',
+                Rule::unique($permissionsTable, 'slug')
             ],
             'description'   => 'string|nullable',
-            'level'         => 'integer|nullable',
         ];
     }
 
@@ -75,15 +72,14 @@ class UpdateRoleRequest extends FormRequestCustomizer
     /**
      * Build and return a DTO
      *
-     * @return \Mawuekom\Accontrol\DataTransferObjects\RoleDTO
+     * @return \Mawuekom\Accontrol\DataTransferObjects\PermissionDTO
      */
-    public function toDTO(): RoleDTO
+    public function toDTO(): PermissionDTO
     {
-        return new RoleDTO([
+        return new PermissionDTO([
             'name'          => $this ->name,
             'slug'          => $this ->slug,
             'description'   => $this ->description,
-            'level'         => $this ->level,
         ]);
     }
 
@@ -94,8 +90,6 @@ class UpdateRoleRequest extends FormRequestCustomizer
      */
     public function fulfill(): array
     {
-        $roleIDRouteParam = $this ->route(config('accontrol.role.id_route_param'));
-
-        return $this ->roleService ->update($roleIDRouteParam, $this ->toDTO());
+        return $this ->permissionService ->create($this ->toDTO());
     }
 }
