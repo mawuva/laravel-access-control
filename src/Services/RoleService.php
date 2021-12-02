@@ -15,13 +15,6 @@ class RoleService
     protected $roleRepository;
 
     /**
-     * Entity name
-     *
-     * @var string
-     */
-    protected $slug;
-
-    /**
      * Create new service instance.
      *
      * @param \Mawuekom\Accontrol\Repositories\RoleRepository $roleRepository
@@ -30,7 +23,6 @@ class RoleService
      */
     public function __construct(RoleRepository $roleRepository)
     {
-        $this ->slug            = config('accontrol.role.slug');
         $this ->roleRepository  = $roleRepository;
     }
 
