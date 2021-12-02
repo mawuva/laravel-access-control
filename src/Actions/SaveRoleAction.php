@@ -4,7 +4,6 @@ namespace Mawuekom\Accontrol\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Mawuekom\Accontrol\DataTransferObjects\RoleDTO;
-use Mawuekom\Accontrol\Facades\Accontrol;
 
 class SaveRoleAction
 {
