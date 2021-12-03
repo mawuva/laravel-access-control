@@ -64,8 +64,8 @@ class PermissionService
     public function getById($id, $inTrashed = false, $columns = ['*'])
     {
         $permission = data_helpers($this ->permissionRepository ->getModel(), [], $inTrashed)
-                    ->fromId($id)
-                    ->getDataRow($columns);
+                        ->fromId($id)
+                        ->getDataRow($columns);
 
         if (is_null($permission)) {
             return failure_response(null, trans('lang-resources::commons.messages.resource.not_found'), Response::HTTP_NO_CONTENT);
@@ -91,7 +91,7 @@ class PermissionService
     public function getByField($field, $value = null, $inTrashed = false, $columns = ['*'])
     {
         $permission = data_helpers($this ->permissionRepository ->getModel(), [$field, $value], $inTrashed)
-                    ->getDataRow($columns);
+                        ->getDataRow($columns);
 
         if (is_null($permission)) {
             return failure_response(null, trans('lang-resources::commons.messages.resource.not_found'), Response::HTTP_NO_CONTENT);
@@ -131,8 +131,8 @@ class PermissionService
     public function updateFieldValueById($id, string $field, string $value = null)
     {
         $permission = data_helpers($this ->permissionRepository ->getModel())
-                    ->fromId($id)
-                    ->getDataRow([$field]);
+                        ->fromId($id)
+                        ->getDataRow([$field]);
 
         $permission ->{$field} = $value;
         $permission ->save();
