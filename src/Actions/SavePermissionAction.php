@@ -5,7 +5,7 @@ namespace Mawuekom\Accontrol\Actions;
 use Illuminate\Database\Eloquent\Model;
 use Mawuekom\Accontrol\DataTransferObjects\PermissionDTO;
 
-class SavepermissionAction
+class SavePermissionAction
 {
     /**
      * Execute action

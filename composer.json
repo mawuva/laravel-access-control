@@ -21,6 +21,7 @@
         "illuminate/support": "^8.0",
         "illuminate/database": "^8.0",
         "illuminate/http": "^8.0",
+        "illuminate/auth": "^8.0",
         "illuminate/validation": "^8.0",
         "mawuekom/laravel-custom-helpers": "^1.0",
         "mawuekom/laravel-lang-resources": "^1.2",
