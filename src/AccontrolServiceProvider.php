@@ -29,6 +29,11 @@ class AccontrolServiceProvider extends ServiceProvider
                 __DIR__.'/../config/accontrol.php' => config_path('accontrol.php'),
             ], 'config');
 
+            // publishing the seeders
+            $this->publishes([
+                __DIR__.'/../database/seeders/publish' => database_path('seeders'),
+            ], 'seeders');
+
             // Publishing the views.
             /*$this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/accontrol'),
