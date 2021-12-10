@@ -2,6 +2,7 @@
 
 namespace Mawuekom\Accontrol;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AccontrolServiceProvider extends ServiceProvider
@@ -20,6 +21,8 @@ class AccontrolServiceProvider extends ServiceProvider
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'accontrol');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
+
+        $this ->registerBladeExtension();
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -57,6 +60,26 @@ class AccontrolServiceProvider extends ServiceProvider
         // Register the main class to use with the facade
         $this->app->singleton('accontrol', function () {
             return new Accontrol;
+        });
+    }
+
+    /**
+     * Register Blade extensions.
+     *
+     * @return void
+     */
+    public function registerBladeExtension()
+    {
+        Blade::if('role', function ($expression) {
+            return has_role($expression);
+        });
+
+        Blade::if('permission', function ($expression) {
+            return has_permission($expression);
+        });
+
+        Blade::if('level', function ($expression) {
+            return has_level($expression);
         });
     }
 }
