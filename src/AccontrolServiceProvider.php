@@ -4,6 +4,7 @@ namespace Mawuekom\Accontrol;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Mawuekom\Accontrol\Commands\InstallCommand;
 
 class AccontrolServiceProvider extends ServiceProvider
 {
@@ -50,7 +51,9 @@ class AccontrolServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                InstallCommand::class,
+            ]);
         }
     }
 
