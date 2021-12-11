@@ -220,20 +220,20 @@ trait HasRoleAndPermission
         if ($roleInheritance) {
             return $permissionModel
                     ::select([$permissionsTable.'.*', $permissionRoleTable.'.created_at as pivot_created_at', $permissionRoleTable.'.updated_at as pivot_updated_at'])
-                    ->join($permissionRoleTable, $permissionRoleTable.'.'.$permissionRoleTablePermissionFK, '=', $$permissionsTable.'.'.$$permissionsTablePK)
+                    ->join($permissionRoleTable, $permissionRoleTable.'.'.$permissionRoleTablePermissionFK, '=', $permissionsTable.'.'.$permissionsTablePK)
                     ->join($rolesTable, $rolesTable.'.'.$rolesTablePK, '=', $permissionRoleTable.'.'.$permissionRoleTableRoleFK)
                     ->whereIn($rolesTable.'.'.$rolesTablePK, $this->getRoles()->pluck($rolesTablePK)->toArray())
                     ->orWhere($rolesTable.'.level', '<', $this->level())
-                    ->groupBy([$permissionsTable.'.'.$permissionsTablePK, $permissionsTable.'.name', $permissionsTable.'.slug', $permissionsTable.'.description', $permissionsTable.'.model', $permissionsTable.'.created_at', $permissionsTable.'.updated_at', $permissionsTable.'.deleted_at', 'pivot_created_at', 'pivot_updated_at']);
+                    ->groupBy([$permissionsTable.'.'.$permissionsTablePK, $permissionsTable.'.name', $permissionsTable.'.slug', $permissionsTable.'.description', /*$permissionsTable.'.model',*/ $permissionsTable.'.created_at', $permissionsTable.'.updated_at', $permissionsTable.'.deleted_at', 'pivot_created_at', 'pivot_updated_at']);
         }
 
         else {
             return $permissionModel
                     ::select([$permissionsTable.'.*', $permissionRoleTable.'.created_at as pivot_created_at', $permissionRoleTable.'.updated_at as pivot_updated_at'])
-                    ->join($permissionRoleTable, $permissionRoleTable.'.'.$permissionRoleTablePermissionFK, '=', $$permissionsTable.'.'.$$permissionsTablePK)
+                    ->join($permissionRoleTable, $permissionRoleTable.'.'.$permissionRoleTablePermissionFK, '=', $permissionsTable.'.'.$permissionsTablePK)
                     ->join($rolesTable, $rolesTable.'.'.$rolesTablePK, '=', $permissionRoleTable.'.'.$permissionRoleTableRoleFK)
                     ->whereIn($rolesTable.'.'.$rolesTablePK, $this->getRoles()->pluck($rolesTablePK)->toArray())
-                    ->groupBy([$permissionsTable.'.'.$permissionsTablePK, $permissionsTable.'.name', $permissionsTable.'.slug', $permissionsTable.'.description', $permissionsTable.'.model', $permissionsTable.'.created_at', $permissionsTable.'.updated_at', $permissionsTable.'.deleted_at', 'pivot_created_at', 'pivot_updated_at']);
+                    ->groupBy([$permissionsTable.'.'.$permissionsTablePK, $permissionsTable.'.name', $permissionsTable.'.slug', $permissionsTable.'.description', /*$permissionsTable.'.model',*/ $permissionsTable.'.created_at', $permissionsTable.'.updated_at', $permissionsTable.'.deleted_at', 'pivot_created_at', 'pivot_updated_at']);
         }
     }
 
