@@ -35,7 +35,7 @@ return [
     ],
 
     'role_user'     => [
-        'enable'                    => true,
+        'enabled'                   => true,
         'name'                      => env('ACCONTROL_ROLE_USER_LABEL', 'Role User'),
         'slug'                      => env('ACCONTROL_ROLE_USER_SLUG', 'role_user'),
         'model'                     => env('ACCONTROL_ROLE_USER_MODEL', null),
