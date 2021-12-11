@@ -75,14 +75,18 @@ class InstallCommand extends Command
             $str = file_get_contents($userPath);
 
             if ($str !== false) {
-                $str = str_replace('use Laravel\Sanctum\HasApiTokens;', "use Laravel\Sanctum\HasApiTokens;\nuse Mawuekom\Accontrol\Assignables\HasRoleAndPermission;", $str);
+                if (!str_contains($str, "use Laravel\Sanctum\HasApiTokens;\nuse Mawuekom\Accontrol\Assignables\HasRoleAndPermission;")) {
+                    $str = str_replace('use Laravel\Sanctum\HasApiTokens;', "use Laravel\Sanctum\HasApiTokens;\nuse Mawuekom\Accontrol\Assignables\HasRoleAndPermission;", $str);
+                }
 
                 $start = strpos($str, 'use HasApiTokens');
                 $end = strpos($str, ', Notifiable') - $start;
                 $lengthToAdd = strlen(', Notifiable');
                 $toSearch = substr($str, $start, $end+$lengthToAdd);
 
-                $str = str_replace($toSearch, $toSearch . ', HasRoleAndPermission', $str);
+                if (!str_contains($str, $toSearch . ', HasRoleAndPermission')) {
+                    $str = str_replace($toSearch, $toSearch . ', HasRoleAndPermission', $str);
+                }
 
                 file_put_contents($userPath, $str);
             }
@@ -103,6 +107,6 @@ class InstallCommand extends Command
         $this->call('db:seed', ['--class' => 'ConnectRelationshipsSeeder']);
         $this->call('db:seed', ['--class' => 'UsersTableSeeder']);
 
-        $this->info('Successfully installed CustomUser! Enjoy');
+        $this->info('Successfully installed Accontrol ! Enjoy');
     }
 }
