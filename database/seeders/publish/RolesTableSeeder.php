@@ -48,7 +48,7 @@ class RolesTableSeeder extends Seeder
             $newRoleItem = config('accontrol.role.model')::where('slug', '=', $roleItem['slug'])->first();
 
             if ($newRoleItem === null) {
-                $newRoleItem = config('roles.models.role')::create([
+                $newRoleItem = config('accontrol.role.model')::create([
                     'name'          => $roleItem['name'],
                     'slug'          => $roleItem['slug'],
                     'description'   => $roleItem['description'],

@@ -4,12 +4,13 @@ namespace Mawuekom\Accontrol\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Mawuekom\Accontrol\Assignables\PermissionHasRelations;
 use Mawuekom\CustomHelpers\Traits\Slugable;
 use Mawuekom\ModelUuid\Utils\GeneratesUuid;
 
 class Permission extends Model
 {
-    use SoftDeletes, GeneratesUuid, Slugable;
+    use SoftDeletes, GeneratesUuid, Slugable, PermissionHasRelations;
 
     /**
      * Create a new model instance.

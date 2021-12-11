@@ -98,7 +98,10 @@ class InstallCommand extends Command
         require_once base_path('vendor/autoload.php');
 
         $this->info('Seeding data into the database');
-        $this->call('db:seed', ['--class' => 'RolesTableSeeder PermissionsTableSeeder ConnectRelationshipsSeeder UsersTableSeeder']);
+        $this->call('db:seed', ['--class' => 'RolesTableSeeder']);
+        $this->call('db:seed', ['--class' => 'PermissionsTableSeeder']);
+        $this->call('db:seed', ['--class' => 'ConnectRelationshipsSeeder']);
+        $this->call('db:seed', ['--class' => 'UsersTableSeeder']);
 
         $this->info('Successfully installed CustomUser! Enjoy');
     }

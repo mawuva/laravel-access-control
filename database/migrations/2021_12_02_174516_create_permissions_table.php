@@ -21,20 +21,22 @@ class CreatePermissionsTable extends Migration
         $permissionsTablePK     = config('accontrol.permission.table.primary_key');
 
         if ($permissionEnabled) {
-            Schema::create($permissionsTable, function (Blueprint $table) 
-            use ($permissionsTablePK, $uuidEnabled, $uuidColumn) {
-                $table->id($permissionsTablePK);
+            if (!Schema::hasTable($permissionsTable)) {
+                Schema::create($permissionsTable, function (Blueprint $table) 
+                use ($permissionsTablePK, $uuidEnabled, $uuidColumn) {
+                    $table->id($permissionsTablePK);
 
-                if ($uuidEnabled && $uuidColumn !== null) {
-                    $table->uuid($uuidColumn);
-                }
-                
-                $table->string('name');
-                $table->string('slug')->unique();
-                $table->longText('description')->nullable();
-                $table->timestamps();
-                $table->softDeletes();
-            });
+                    if ($uuidEnabled && $uuidColumn !== null) {
+                        $table->uuid($uuidColumn);
+                    }
+                    
+                    $table->string('name');
+                    $table->string('slug')->unique();
+                    $table->longText('description')->nullable();
+                    $table->timestamps();
+                    $table->softDeletes();
+                });
+            }
         }
     }
 

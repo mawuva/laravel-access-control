@@ -54,11 +54,11 @@ class PermissionsTableSeeder extends Seeder
             $newPermissionItem = config('accontrol.permission.model')::where('slug', '=', $permissionItem['slug'])->first();
 
             if ($newPermissionItem === null) {
-                $newPermissionItem = config('roles.models.permission')::create([
+                $newPermissionItem = config('accontrol.permission.model')::create([
                     'name'          => $permissionItem['name'],
                     'slug'          => $permissionItem['slug'],
                     'description'   => $permissionItem['description'],
-                    'model'         => $permissionItem['model'],
+                    //'model'         => $permissionItem['model'],
                 ]);
 
                 echo "\e[32mSeeding:\e[0m Accontrol - DefaultpermissionItemsTableSeeder - Permission:".$permissionItem['slug']."\r\n";

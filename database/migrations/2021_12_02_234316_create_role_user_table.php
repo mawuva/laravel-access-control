@@ -26,25 +26,27 @@ class CreateRoleUserTable extends Migration
         $usersTablePK           = config('custom-user.user.table.primary_key');
 
         if ($roleUserEnabled) {
-            Schema::create($roleUserTable, function (Blueprint $table)
-            use ($roleUserTablePK, $roleUserTableRoleFK, $rolesTable, $rolesTablePK,
-                    $roleUserTableUserFK, $usersTable, $usersTablePK) {
-                $table->id($roleUserTablePK);
+            if (!Schema::hasTable($roleUserTable)) {
+                Schema::create($roleUserTable, function (Blueprint $table)
+                use ($roleUserTablePK, $roleUserTableRoleFK, $rolesTable, $rolesTablePK,
+                        $roleUserTableUserFK, $usersTable, $usersTablePK) {
+                    $table->id($roleUserTablePK);
 
-                $table->unsignedBigInteger($roleUserTableRoleFK);
-                $table->foreign($roleUserTableRoleFK)
-                        ->references($rolesTable)
-                        ->on($rolesTablePK) 
-                        ->onDelete('cascade');
+                    $table->unsignedBigInteger($roleUserTableRoleFK);
+                    $table->foreign($roleUserTableRoleFK)
+                            ->references($rolesTable)
+                            ->on($rolesTablePK) 
+                            ->onDelete('cascade');
 
-                $table->unsignedBigInteger($roleUserTableUserFK);
-                $table->foreign($roleUserTableUserFK)
-                        ->references($usersTable)
-                        ->on($usersTablePK) 
-                        ->onDelete('cascade');
+                    $table->unsignedBigInteger($roleUserTableUserFK);
+                    $table->foreign($roleUserTableUserFK)
+                            ->references($usersTable)
+                            ->on($usersTablePK) 
+                            ->onDelete('cascade');
 
-                $table->timestamps();
-            });
+                    $table->timestamps();
+                });
+            }
         }
     }
 

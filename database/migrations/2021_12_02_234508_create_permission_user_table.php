@@ -26,25 +26,27 @@ class CreatePermissionUserTable extends Migration
         $usersTablePK                       = config('custom-user.user.table.primary_key');
 
         if ($permissionUserEnabled) {
-            Schema::create($permissionUserTable, function (Blueprint $table)
-            use ($permissionUserTablePK, $permissionUserTablePermissionFK, $permissionsTable, $permissionsTablePK,
-                    $permissionUserTableUserFK, $usersTable, $usersTablePK) {
-                $table->id($permissionUserTablePK);
+            if (!Schema::hasTable($permissionUserTable)) {
+                Schema::create($permissionUserTable, function (Blueprint $table)
+                use ($permissionUserTablePK, $permissionUserTablePermissionFK, $permissionsTable, $permissionsTablePK,
+                        $permissionUserTableUserFK, $usersTable, $usersTablePK) {
+                    $table->id($permissionUserTablePK);
 
-                $table->unsignedBigInteger($permissionUserTablePermissionFK);
-                $table->foreign($permissionUserTablePermissionFK)
-                        ->references($permissionsTable)
-                        ->on($permissionsTablePK) 
-                        ->onDelete('cascade');
+                    $table->unsignedBigInteger($permissionUserTablePermissionFK);
+                    $table->foreign($permissionUserTablePermissionFK)
+                            ->references($permissionsTable)
+                            ->on($permissionsTablePK) 
+                            ->onDelete('cascade');
 
-                $table->unsignedBigInteger($permissionUserTableUserFK);
-                $table->foreign($permissionUserTableUserFK)
-                        ->references($usersTable)
-                        ->on($usersTablePK) 
-                        ->onDelete('cascade');
+                    $table->unsignedBigInteger($permissionUserTableUserFK);
+                    $table->foreign($permissionUserTableUserFK)
+                            ->references($usersTable)
+                            ->on($usersTablePK) 
+                            ->onDelete('cascade');
 
-                $table->timestamps();
-            });
+                    $table->timestamps();
+                });
+            }
         }
     }
 

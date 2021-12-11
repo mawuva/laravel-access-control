@@ -4,12 +4,13 @@ namespace Mawuekom\Accontrol\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Mawuekom\Accontrol\Assignables\RoleHasRelations;
 use Mawuekom\CustomHelpers\Traits\Slugable;
 use Mawuekom\ModelUuid\Utils\GeneratesUuid;
 
 class Role extends Model
 {
-    use SoftDeletes, GeneratesUuid, Slugable;
+    use SoftDeletes, GeneratesUuid, Slugable, RoleHasRelations;
 
     /**
      * Create a new model instance.

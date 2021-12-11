@@ -21,21 +21,23 @@ class CreateRolesTable extends Migration
         $rolesTablePK    = config('accontrol.role.table.primary_key');
         
         if ($roleEnabled) {
-            Schema::create($rolesTable, function (Blueprint $table) 
-            use ($rolesTablePK, $uuidEnabled, $uuidColumn) {
-                $table->id($rolesTablePK);
+            if (!Schema::hasTable($rolesTable)) {
+                Schema::create($rolesTable, function (Blueprint $table) 
+                use ($rolesTablePK, $uuidEnabled, $uuidColumn) {
+                    $table->id($rolesTablePK);
 
-                if ($uuidEnabled && $uuidColumn !== null) {
-                    $table->uuid($uuidColumn);
-                }
-                
-                $table->string('name');
-                $table->string('slug')->unique();
-                $table->longText('description')->nullable();
-                $table->integer('level')->default(1);
-                $table->timestamps();
-                $table->softDeletes();
-            });
+                    if ($uuidEnabled && $uuidColumn !== null) {
+                        $table->uuid($uuidColumn);
+                    }
+                    
+                    $table->string('name');
+                    $table->string('slug')->unique();
+                    $table->longText('description')->nullable();
+                    $table->integer('level')->default(1);
+                    $table->timestamps();
+                    $table->softDeletes();
+                });
+            }
         }
     }
 

@@ -26,25 +26,27 @@ class CreatePermissionRoleTable extends Migration
         $rolesTablePK                       = config('accontrol.role.table.primary_key');
 
         if ($permissionRoleEnabled) {
-            Schema::create($permissionRoleTable, function (Blueprint $table)
-            use ($permissionRoleTablePK, $permissionRoleTablePermissionFK, $permissionsTable, $permissionsTablePK,
-                    $permissionRoleTableRoleFK, $rolesTable, $rolesTablePK) {
-                $table->id($permissionRoleTablePK);
+            if (!Schema::hasTable($permissionRoleTable)) {
+                Schema::create($permissionRoleTable, function (Blueprint $table)
+                use ($permissionRoleTablePK, $permissionRoleTablePermissionFK, $permissionsTable, $permissionsTablePK,
+                        $permissionRoleTableRoleFK, $rolesTable, $rolesTablePK) {
+                    $table->id($permissionRoleTablePK);
 
-                $table->unsignedBigInteger($permissionRoleTablePermissionFK);
-                $table->foreign($permissionRoleTablePermissionFK)
-                        ->references($permissionsTable)
-                        ->on($permissionsTablePK) 
-                        ->onDelete('cascade');
+                    $table->unsignedBigInteger($permissionRoleTablePermissionFK);
+                    $table->foreign($permissionRoleTablePermissionFK)
+                            ->references($permissionsTable)
+                            ->on($permissionsTablePK) 
+                            ->onDelete('cascade');
 
-                $table->unsignedBigInteger($permissionRoleTableRoleFK);
-                $table->foreign($permissionRoleTableRoleFK)
-                        ->references($rolesTable)
-                        ->on($rolesTablePK) 
-                        ->onDelete('cascade');
+                    $table->unsignedBigInteger($permissionRoleTableRoleFK);
+                    $table->foreign($permissionRoleTableRoleFK)
+                            ->references($rolesTable)
+                            ->on($rolesTablePK) 
+                            ->onDelete('cascade');
 
-                $table->timestamps();
-            });
+                    $table->timestamps();
+                });
+            }
         }
     }
 
