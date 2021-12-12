@@ -18,7 +18,7 @@ return [
     | Manage role config
     */
     'role'          => [
-        'enabled'           => env('ACCONTROL_ROLES_ENABLE', true),
+        'enabled'           => env('ACCONTROL_ROLES_ENABLED', true),
         'name'              => env('ACCONTROL_ROLES_LABEL', 'Role'),
         'slug'              => env('ACCONTROL_ROLES_SLUG', 'role'),
         'model'             => env('ACCONTROL_ROLES_MODEL', Mawuekom\Accontrol\Models\Role::class),
@@ -52,7 +52,7 @@ return [
     | Manage permission config
     */
     'permission' => [
-        'enabled'           => true,
+        'enabled'           => env('ACCONTROL_PERMISSIONS_ENABLED', true),
         'name'              => env('ACCONTROL_PERMISSIONS_LABEL', 'Permission'),
         'slug'              => env('ACCONTROL_PERMISSIONS_SLUG', 'permission'),
         'model'             => env('ACCONTROL_PERMISSIONS_MODEL', Mawuekom\Accontrol\Models\Permission::class),
