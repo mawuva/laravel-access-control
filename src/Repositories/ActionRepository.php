@@ -56,7 +56,7 @@ class ActionRepository extends BaseRepository
      */
     public function includableRelations(): array
     {
-        return ['users'];
+        return ['entities', 'permissions'];
     }
 
     /**
