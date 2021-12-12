@@ -97,6 +97,28 @@ return [
     ],
 
     /*
+    | Manage action config
+    | Actions are the different operations that are done on an entity.
+    | Operations like : Create, Read, Update, Delete
+    */
+    'action' => [
+        'enabled'                   => env('ACCONTROL_ACTIONS_ENABLED', true),
+        'name'                      => env('ACCONTROL_ACTIONS_LABEL', 'Action'),
+        'slug'                      => env('ACCONTROL_ACTIONS_SLUG', 'action'),
+        'model'                     => env('ACCONTROL_ACTIONS_MODEL', Mawuekom\Accontrol\Models\Action::class),
+
+        /*
+        | The name of the parameter you set in your web.php or api.php to get action's ID
+        */
+        'id_route_param'    => 'id',
+
+        'table'                     => [
+            'name'                  => env('ACCONTROL_ACTIONS_DATABASE_TABLE', 'actions'),
+            'primary_key'           => env('ACCONTROL_ACTIONS_DATABASE_TABLE_PRIMARY_KEY', 'id'),
+        ],
+    ],
+
+    /*
     |--------------------------------------------------------------------------
     | Inheritance
     |--------------------------------------------------------------------------
