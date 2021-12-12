@@ -63,8 +63,10 @@ return [
         'id_route_param'    => 'id',
 
         'table'             => [
-            'name'          => env('ACCONTROL_PERMISSIONS_DATABASE_TABLE', 'permissions'),
-            'primary_key'   => env('ACCONTROL_PERMISSIONS_DATABASE_TABLE_PRIMARY_KEY', 'id'),
+            'name'                  => env('ACCONTROL_PERMISSIONS_DATABASE_TABLE', 'permissions'),
+            'primary_key'           => env('ACCONTROL_PERMISSIONS_DATABASE_TABLE_PRIMARY_KEY', 'id'),
+            'action_foreign_key'    => env('ACCONTROL_PERMISSIONS_DATABASE_TABLE_ACTION_FOREIGN_KEY', 'action_id'),
+            'entity_foreign_key'    => env('ACCONTROL_PERMISSIONS_DATABASE_TABLE_ENTITY_FOREIGN_KEY', 'entity_id'),
         ],
     ],
 
