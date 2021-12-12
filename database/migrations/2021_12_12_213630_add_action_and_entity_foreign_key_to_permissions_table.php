@@ -35,7 +35,7 @@ class AddActionAndEntityForeignKeyToPermissionsTable extends Migration
                         ->references($actionsTablePK)
                         ->on($actionsTable);
 
-                $table->unsignedBigInteger($permissionsTableEntityFK)->nullable();
+                $table->unsignedBigInteger($permissionsTableEntityFK)->nullable() ->after($permissionsTableActionFK);
                 $table->foreign($permissionsTableEntityFK)
                         ->references($entitiesTablePK)
                         ->on($entitiesTable);
