@@ -48,7 +48,7 @@ class StoreActionRequest extends FormRequestCustomizer
         return [
             'name'                          => 'required|string|max:255',
             'slug'                          => [
-                'required', 'string', 'max:255',
+                'nullable', 'string', 'max:255',
                 Rule::unique($actionsTable, 'slug')
             ],
             'description'                   => 'string|nullable',
