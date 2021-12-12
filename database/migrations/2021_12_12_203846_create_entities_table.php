@@ -13,10 +13,10 @@ class CreateEntitiesTable extends Migration
      */
     public function up()
     {
-        $uuidEnabled     = config('accontrol.uuids.enabled');
-        $uuidColumn      = config('accontrol.uuids.column');
+        $uuidEnabled        = config('accontrol.uuids.enabled');
+        $uuidColumn         = config('accontrol.uuids.column');
 
-        $entityEnabled     = config('accontrol.entity.enabled');
+        $entityEnabled      = config('accontrol.entity.enabled');
         $entitiesTable      = config('accontrol.entity.table.name');
         $entitiesTablePK    = config('accontrol.entity.table.primary_key');
         
