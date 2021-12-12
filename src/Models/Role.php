@@ -5,10 +5,11 @@ namespace Mawuekom\Accontrol\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Mawuekom\Accontrol\Assignables\RoleHasRelations;
+use Mawuekom\Accontrol\Contracts\Assignables\RoleHasRelations as RoleHasRelationsContract;
 use Mawuekom\CustomHelpers\Traits\Slugable;
 use Mawuekom\ModelUuid\Utils\GeneratesUuid;
 
-class Role extends Model
+class Role extends Model implements RoleHasRelationsContract
 {
     use SoftDeletes, GeneratesUuid, Slugable, RoleHasRelations;
 

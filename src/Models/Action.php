@@ -4,12 +4,14 @@ namespace Mawuekom\Accontrol\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Mawuekom\Accontrol\Assignables\ActionHasRelations;
+use Mawuekom\Accontrol\Contracts\Assignables\ActionHasRelations as ActionHasRelationsContract;
 use Mawuekom\CustomHelpers\Traits\Slugable;
 use Mawuekom\ModelUuid\Utils\GeneratesUuid;
 
-class Action extends Model
+class Action extends Model implements ActionHasRelationsContract
 {
-    use SoftDeletes, GeneratesUuid, Slugable;
+    use SoftDeletes, GeneratesUuid, Slugable, ActionHasRelations;
 
     /**
      * Create a new model instance.
