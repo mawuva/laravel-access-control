@@ -98,6 +98,7 @@ return [
 
     /*
     | Manage action config
+    |
     | Actions are the different operations that are done on an entity.
     | Operations like : Create, Read, Update, Delete
     */
@@ -115,6 +116,23 @@ return [
         'table'                     => [
             'name'                  => env('ACCONTROL_ACTIONS_DATABASE_TABLE', 'actions'),
             'primary_key'           => env('ACCONTROL_ACTIONS_DATABASE_TABLE_PRIMARY_KEY', 'id'),
+        ],
+    ],
+
+    /*
+    | Manage entity config
+    |
+    | Entities are model on which actions are performed.
+    */
+    'entity' => [
+        'enabled'                   => env('ACCONTROL_ENTITIES_ENABLED', true),
+        'name'                      => env('ACCONTROL_ENTITIES_LABEL', 'Entity'),
+        'slug'                      => env('ACCONTROL_ENTITIES_SLUG', 'entity'),
+        'model'                     => env('ACCONTROL_ENTITIES_MODEL', Mawuekom\Accontrol\Models\Entity::class),
+
+        'table'                     => [
+            'name'                  => env('ACCONTROL_ENTITIES_DATABASE_TABLE', 'entities'),
+            'primary_key'           => env('ACCONTROL_ENTITIES_DATABASE_TABLE_PRIMARY_KEY', 'id'),
         ],
     ],
 
