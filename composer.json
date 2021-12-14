@@ -60,7 +60,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mawuekom\\Accontrol\\Providers\\AccontrolServiceProvider"
+                "Mawuekom\\Accontrol\\AccontrolServiceProvider"
             ],
             "aliases": {
                 "Accontrol": "Mawuekom\\Accontrol\\Facades\\Accontrol"

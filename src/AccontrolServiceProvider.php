@@ -1,6 +1,6 @@
 <?php
 
-namespace Mawuekom\Accontrol\Providers;
+namespace Mawuekom\Accontrol;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -15,41 +15,41 @@ class AccontrolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        require_once __DIR__.'/../helpers.php';
+        require_once __DIR__.'/helpers.php';
         
         /*
          * Optional methods to load your package assets
          */
-        $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'accontrol');
-        // $this->loadViewsFrom(__DIR__.'/../../resources/views', 'accontrol');
-        $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'accontrol');
+        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'accontrol');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         $this ->registerBladeExtension();
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../../config/accontrol.php' => config_path('accontrol.php'),
+                __DIR__.'/../config/accontrol.php' => config_path('accontrol.php'),
             ], 'config');
 
             // publishing the seeders
             $this->publishes([
-                __DIR__.'/../../database/seeders/publish' => database_path('seeders'),
+                __DIR__.'/../database/seeders/publish' => database_path('seeders'),
             ], 'seeders');
 
             // Publishing the views.
             /*$this->publishes([
-                __DIR__.'/../../resources/views' => resource_path('views/vendor/accontrol'),
+                __DIR__.'/../resources/views' => resource_path('views/vendor/accontrol'),
             ], 'views');*/
 
             // Publishing assets.
             /*$this->publishes([
-                __DIR__.'/../../resources/assets' => public_path('vendor/accontrol'),
+                __DIR__.'/../resources/assets' => public_path('vendor/accontrol'),
             ], 'assets');*/
 
             // Publishing the translation files.
             /*$this->publishes([
-                __DIR__.'/../../resources/lang' => resource_path('lang/vendor/accontrol'),
+                __DIR__.'/../resources/lang' => resource_path('lang/vendor/accontrol'),
             ], 'lang');*/
 
             // Registering package commands.
@@ -65,7 +65,7 @@ class AccontrolServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../../config/accontrol.php', 'accontrol');
+        $this->mergeConfigFrom(__DIR__.'/../config/accontrol.php', 'accontrol');
 
         $this->app->register(AccontrolEventServiceProvider::class);
 
