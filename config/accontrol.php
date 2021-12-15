@@ -132,6 +132,11 @@ return [
         'slug'                      => env('ACCONTROL_ENTITIES_SLUG', 'entity'),
         'model'                     => env('ACCONTROL_ENTITIES_MODEL', Mawuekom\Accontrol\Models\Entity::class),
 
+        /*
+        | The name of the parameter you set in your web.php or api.php to get action's ID
+        */
+        'id_route_param'    => 'id',
+
         'table'                     => [
             'name'                  => env('ACCONTROL_ENTITIES_DATABASE_TABLE', 'entities'),
             'primary_key'           => env('ACCONTROL_ENTITIES_DATABASE_TABLE_PRIMARY_KEY', 'id'),
