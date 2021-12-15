@@ -9,5 +9,5 @@ class RoleDTO extends DataTransferObject
     public string $name;
     public string|null $slug;
     public string|null $description;
-    public int|null $level;
+    public string|null $level;
 }
