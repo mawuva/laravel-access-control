@@ -26,7 +26,7 @@ if (!function_exists('has_level')) {
         if (auth() || auth('admin')) {
             $user = (auth('admin') ->user() !== null) ? auth('admin') ->user() : auth() ->user();
 
-            if ($user()->level() >= $level) {
+            if ($user->level() >= $level) {
                 return true;
             }
 
@@ -51,14 +51,14 @@ if (!function_exists('has_permission')) {
                 $permissions = explode('|', $permission);
 
                 for ($i = 0; $i < count($permissions); $i++) {
-                    if ($user()->hasRole($permissions[$i])) {
+                    if ($user->hasRole($permissions[$i])) {
                         return true;
                     }
                 }
             }
 
             else {
-                if ($user() ->hasPermission($permission)) {
+                if ($user ->hasPermission($permission)) {
                     return true;
                 }
             }
@@ -84,7 +84,7 @@ if (!function_exists('has_role')) {
                 $roles = explode('|', $role);
 
                 for ($i = 0; $i < count($roles); $i++) {
-                    if ($user()->hasRole($roles[$i])) {
+                    if ($user->hasRole($roles[$i])) {
                         return true;
                     }
                 }
@@ -92,14 +92,14 @@ if (!function_exists('has_role')) {
 
             elseif (is_array($role)) {
                 for ($i = 0; $i < count($role); $i++) {
-                    if ($user()->hasRole($role[$i])) {
+                    if ($user->hasRole($role[$i])) {
                         return true;
                     }
                 }
             }
 
             else {
-                if ($user()->hasRole($role)) {
+                if ($user->hasRole($role)) {
                     return true;
                 }
             }
