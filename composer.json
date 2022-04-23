@@ -30,7 +30,7 @@
         "mawuekom/laravel-repository": "^1.3",
         "mawuekom/laravel-request-customizer": "^1.1",
         "spatie/data-transfer-object": "^2.8",
-        "mawuekom/laravel-custom-user": "^1.10",
+        "mawuekom/laravel-custom-user": "^2.1",
         "doctrine/dbal": "^3.2",
         "symfony/console": "^5.4"
     },
